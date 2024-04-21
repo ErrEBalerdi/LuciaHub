@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -116,9 +116,9 @@ TextureImporter:
       name: personaje principal parado_0
       rect:
         serializedVersion: 2
-        x: 2123
-        y: 3
-        width: 502
+        x: 1961
+        y: 4
+        width: 456
         height: 1324
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -143,8 +143,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      personaje principal parado_0: 3250087209200903652
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
