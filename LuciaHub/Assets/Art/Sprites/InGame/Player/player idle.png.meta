@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      personaje principal parado_0: 3250087209200903652
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

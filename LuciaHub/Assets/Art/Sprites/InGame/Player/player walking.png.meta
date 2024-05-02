@@ -479,7 +479,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      personaje principal caminar x2_0: 1012276041384898839
+      personaje principal caminar x2_1: 3474961715465781249
+      personaje principal caminar x2_10: -5511191461874684612
+      personaje principal caminar x2_11: -1723850311511775518
+      personaje principal caminar x2_12: -4278210059144174197
+      personaje principal caminar x2_13: -7666713849508303783
+      personaje principal caminar x2_14: -6827424679888896573
+      personaje principal caminar x2_2: 8060570974302607870
+      personaje principal caminar x2_3: -3456523030037793580
+      personaje principal caminar x2_4: -1514564660452873553
+      personaje principal caminar x2_5: 7844399358415689528
+      personaje principal caminar x2_6: -2340823733949549181
+      personaje principal caminar x2_7: -3007811684444051837
+      personaje principal caminar x2_8: -8754634522787577782
+      personaje principal caminar x2_9: -7857049148062758699
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
