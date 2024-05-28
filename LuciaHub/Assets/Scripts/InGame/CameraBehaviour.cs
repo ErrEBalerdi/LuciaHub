@@ -1,26 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject target;
     [SerializeField] private float offset;
-
-    private float minX = -3f;
-    private float maxX = 3f;
+    private GameManager gameManager;
+    private float minX;
+    private float maxX;
     private PlayerMovement playerDirection;
-
     public float smoothTime = 20f;
     private Vector2 velocity = Vector2.zero;
 
     void Start()
     {
         playerDirection = target.GetComponent<PlayerMovement>();
+        gameManager = FindObjectOfType<GameManager>();
+        maxX = gameManager.maxX;
+        minX = gameManager.minX;
     }
+
 
     void Update()
     {
+     
         // Sitúa la camara un poco a la izquierda o a la derecha del personaje segun donde mire
 
         // '?' Es un operador ternario (como un if else)
@@ -32,7 +37,7 @@ public class CameraBehaviour : MonoBehaviour
         Vector3 desiredPosition = new Vector3(target.transform.position.x + offset, transform.position.y, transform.position.z);
 
         // Limita el avance de la camara para no salirse del fondo
-        float clampedX = Mathf.Clamp(desiredPosition.x, minX, maxX);
+        float clampedX = Mathf.Clamp(desiredPosition.x, minX , maxX);
         desiredPosition = new Vector3(clampedX, desiredPosition.y, desiredPosition.z);
 
 
