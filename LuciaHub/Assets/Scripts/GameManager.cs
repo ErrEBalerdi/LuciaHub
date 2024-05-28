@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     private Transform spawnPositionObject;
     // Patron Singleton, permite una sola instancia de este objeto. Si hay otra, este se destruye.
     public static GameManager Instance { get; private set; }
-
+    public float minX;
+    public float maxX; 
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -47,6 +48,9 @@ public class GameManager : MonoBehaviour
             playerTransform.position = spawnPositions[pos].position;
         else
             Debug.LogWarning("Player not Found");
+
+        
+
     }
 
     public void LoadMainMenu()
@@ -57,6 +61,14 @@ public class GameManager : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        switch (currentSceneIndex)
+        {
+            case 1:
+                minX = -3.5f;
+                maxX = 25f;
+                break;
+        }
     }
     public void EnterRoom(string sceneName)
     {
