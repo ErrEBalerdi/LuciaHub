@@ -7,9 +7,11 @@ public class CameraBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject target;
     [SerializeField] private float offset;
-    private GameManager gameManager;
     private float minX;
     private float maxX;
+
+    public float MinX {  set { value =  minX; } }
+
     private PlayerMovement playerDirection;
     public float smoothTime = 20f;
     private Vector2 velocity = Vector2.zero;
@@ -17,9 +19,6 @@ public class CameraBehaviour : MonoBehaviour
     void Start()
     {
         playerDirection = target.GetComponent<PlayerMovement>();
-        gameManager = FindObjectOfType<GameManager>();
-        maxX = gameManager.maxX;
-        minX = gameManager.minX;
     }
 
 

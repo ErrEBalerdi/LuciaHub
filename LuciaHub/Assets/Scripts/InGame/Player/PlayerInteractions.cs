@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour
 {
-    [SerializeField] private bool keyPressed = false;
+    [SerializeField] private bool ePressed = false;
     private bool canTransition = false;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && canTransition)
         {
-            keyPressed = true;
+            ePressed = true;
         }
     }
-
+    
     private void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log("Trigger: " + collision.tag);
@@ -24,7 +24,7 @@ public class PlayerInteractions : MonoBehaviour
         {
             canTransition = true;
 
-            if (canTransition && keyPressed)
+            if (canTransition && ePressed)
             {
                 Debug.Log("E pressed.");
                 collision.GetComponent<RoomTransition>().PlayTransition();
@@ -37,6 +37,6 @@ public class PlayerInteractions : MonoBehaviour
         {
             canTransition = false;
         }
-        keyPressed = false;
+        ePressed = false;
     }
 }
