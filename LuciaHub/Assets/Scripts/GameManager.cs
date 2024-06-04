@@ -9,21 +9,25 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private List<Transform> spawnPositions;
     [SerializeField] private Transform playerTransform;
+
+    [SerializeField] private CameraBehaviour currentCamera;
+
     private Transform spawnPositionObject;
     // Patron Singleton, permite una sola instancia de este objeto. Si hay otra, este se destruye.
     public static GameManager Instance { get; private set; }
     public float minX;
     public float maxX; 
+
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-            Destroy(this);
+        if (Instance != null && Instance != gameObject)
+            Destroy(gameObject);
         else
             Instance = this;
     }
     private void Start()
     {
-        // Le paso 0 para indicar la primer posición de la lista provisoriamente
+        // Le paso 0 para indicar la primer posiciÃ³n de la lista provisoriamente
         SpawnPlayer(0);
     }
 
@@ -49,15 +53,14 @@ public class GameManager : MonoBehaviour
         else
             Debug.LogWarning("Player not Found");
 
-        
-
+ 
     }
 
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(0);
     }
-
+    
     public void LoadGame()
     {
        
@@ -71,8 +74,10 @@ public class GameManager : MonoBehaviour
         switch (currentSceneIndex)
         {
             case 1:
+
                 minX = -10f;
                 maxX = 15f;
+
                 break;
           case 2:
                 minX = -1.5f;
@@ -80,4 +85,5 @@ public class GameManager : MonoBehaviour
                 break ;
         }
     }
+
 }

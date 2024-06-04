@@ -8,9 +8,11 @@ public class CameraBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject target;
     [SerializeField] private float offset;
-    private GameManager gameManager;
     private float minX;
     private float maxX;
+
+    public float MinX {  set { value =  minX; } }
+
     private PlayerMovement playerDirection;
     public float smoothTime = 20f;
     private Vector2 velocity = Vector2.zero;
@@ -18,8 +20,10 @@ public class CameraBehaviour : MonoBehaviour
     void Start()
     {
         playerDirection = target.GetComponent<PlayerMovement>();
+
         gameManager = FindAnyObjectByType<GameManager>();
         
+
     }
 
 
@@ -27,7 +31,7 @@ public class CameraBehaviour : MonoBehaviour
     {
         maxX = gameManager.maxX;
         minX = gameManager.minX;
-        // Sitúa la camara un poco a la izquierda o a la derecha del personaje segun donde mire
+        // SitÃºa la camara un poco a la izquierda o a la derecha del personaje segun donde mire
 
         // '?' Es un operador ternario (como un if else)
         // Mathf.Abs saca el valor absoluto. Por lo que si le pones un menos antes, es el mismo valor en negativo.
@@ -43,7 +47,7 @@ public class CameraBehaviour : MonoBehaviour
 
 
         //transform.position = desiredPosition;
-        // Esto es el concepto de interpolación. No lo se, la linea la escribio chatpgt xd
+        // Esto es el concepto de interpolaciÃ³n. No lo se, la linea la escribio chatpgt xd
         transform.position = Vector2.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime);
     }
 }
