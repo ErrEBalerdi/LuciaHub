@@ -10,8 +10,7 @@ public class CameraBehaviour : MonoBehaviour
     [SerializeField] private float offset;
     private float minX;
     private float maxX;
-
-    public float MinX {  set { value =  minX; } }
+    private GameManager gameManager;
 
     private PlayerMovement playerDirection;
     public float smoothTime = 20f;
