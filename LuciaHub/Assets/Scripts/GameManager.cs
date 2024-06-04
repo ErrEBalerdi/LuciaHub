@@ -60,19 +60,24 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        switch (currentSceneIndex)
-        {
-            case 1:
-                minX = -3.5f;
-                maxX = 25f;
-                break;
-        }
+       
     }
     public void EnterRoom(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
         SpawnPlayer(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        switch (currentSceneIndex)
+        {
+            case 1:
+                minX = -10f;
+                maxX = 15f;
+                break;
+          case 2:
+                minX = -1.5f;
+                maxX = 7f;
+                break ;
+        }
     }
 }
