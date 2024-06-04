@@ -6,19 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/reception.unity
-    guid: 439107c1b9dcdcd42ac2ea053eb2acff
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: d2501978ae1b32544a0f836e9da86f46
-  - enabled: 1
-    path: Assets/Scenes/DiningRoom.unity
-    guid: 674f8e1e12d31b64d8e25412ca880020
-  - enabled: 1
-    path: Assets/Scenes/FirstFloor.unity
-    guid: 0de0f7a44ea981e47ae12a4a11e80ca5
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
