@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        // Le paso 0 para indicar la primer posición de la lista provisoriamente
+        // Le paso 0 para indicar la primer posiciÃ³n de la lista provisoriamente
         SpawnPlayer(0);
     }
 
@@ -63,29 +63,27 @@ public class GameManager : MonoBehaviour
     
     public void LoadGame()
     {
+       
+    }
+    public void EnterRoom(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+        SpawnPlayer(0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         switch (currentSceneIndex)
         {
             case 1:
-                currentCamera.MinX = -3.5f;
-                maxX = 25f;
+
+                minX = -10f;
+                maxX = 15f;
+
                 break;
+          case 2:
+                minX = -1.5f;
+                maxX = 7f;
+                break ;
         }
     }
 
-    // Este script se ejecuta cuando se pasa de sala dentro del juego
-    public void EnterRoom(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-        SpawnPlayer(0);
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        switch (currentSceneIndex)
-        {
-            case 1:
-                currentCamera.MinX = -3.5f;
-                maxX = 25f;
-                break;
-        }
-    }
 }
