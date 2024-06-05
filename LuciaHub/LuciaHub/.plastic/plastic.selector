@@ -1,0 +1,4 @@
+repository "LuciaHub@LuciaGrup@cloud"
+  path "/"
+    br "/main"
+    co "/main"
