@@ -310,7 +310,7 @@ Transform:
   m_GameObject: {fileID: 92045841}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7057876, w: 0.7084236}
-  m_LocalPosition: {x: 34.24, y: 0.28, z: 0}
+  m_LocalPosition: {x: 24.57, y: 0.32, z: 0}
   m_LocalScale: {x: 10.68468, y: -0.48173997, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -472,6 +472,10 @@ PrefabInstance:
     - target: {fileID: 1534812056144179196, guid: 8a7acf3592324144b9493b5a5159fcc7, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534812056144179196, guid: 8a7acf3592324144b9493b5a5159fcc7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.9000015
       objectReference: {fileID: 0}
     - target: {fileID: 2578781659172585783, guid: 8a7acf3592324144b9493b5a5159fcc7, type: 3}
       propertyPath: m_IsActive
@@ -786,7 +790,7 @@ Transform:
   m_GameObject: {fileID: 787410919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalPosition: {x: -9.74, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -847,7 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963283d267a6ff446bee75d020b1d9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1716215505}
   offset: 1.5
   smoothTime: 1
 --- !u!81 &1259262138
@@ -955,6 +959,7 @@ Transform:
   m_Children:
   - {fileID: 787410920}
   - {fileID: 92045842}
+  - {fileID: 2091783771}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1408161409
@@ -1230,9 +1235,6 @@ MonoBehaviour:
   - {fileID: 1730463526}
   - {fileID: 33410010}
   playerTransform: {fileID: 0}
-  currentCamera: {fileID: 0}
-  minX: 0
-  maxX: 0
 --- !u!4 &1591490422
 Transform:
   m_ObjectHideFlags: 0
@@ -1481,8 +1483,8 @@ GameObject:
   - component: {fileID: 2091783771}
   - component: {fileID: 2091783770}
   m_Layer: 6
-  m_Name: Reception
-  m_TagString: Untagged
+  m_Name: Background
+  m_TagString: BackgroundSprite
   m_Icon: {fileID: 2800000, guid: 295e44cef6a724d4fa1d386ea35a8f49, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1550,11 +1552,11 @@ Transform:
   m_GameObject: {fileID: 2091783769}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.8601, y: 0.44, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.7988437, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1407368089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -1564,7 +1566,6 @@ SceneRoots:
   - {fileID: 1407368089}
   - {fileID: 1408161412}
   - {fileID: 121469668}
-  - {fileID: 2091783771}
   - {fileID: 1591490422}
   - {fileID: 1259262140}
   - {fileID: 559180645}

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Transition
   - SpawnPos
+  - BackgroundSprite
   layers:
   - Default
   - TransparentFX

@@ -10,13 +10,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Transform> spawnPositions;
     [SerializeField] private Transform playerTransform;
 
-    [SerializeField] private CameraBehaviour currentCamera;
-
     private Transform spawnPositionObject;
     // Patron Singleton, permite una sola instancia de este objeto. Si hay otra, este se destruye.
     public static GameManager Instance { get; private set; }
-    public float minX;
-    public float maxX; 
 
     private void Awake()
     {
@@ -63,15 +59,8 @@ public class GameManager : MonoBehaviour
     
     public void LoadGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        switch (currentSceneIndex)
-        {
-            case 1:
-                currentCamera.MinX = -3.5f;
-                maxX = 25f;
-                break;
-        }
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Este script se ejecuta cuando se pasa de sala dentro del juego
@@ -79,13 +68,5 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
         SpawnPlayer(0);
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        switch (currentSceneIndex)
-        {
-            case 1:
-                currentCamera.MinX = -3.5f;
-                maxX = 25f;
-                break;
-        }
     }
 }

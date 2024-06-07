@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class CameraBehaviour : MonoBehaviour
 {
@@ -9,8 +10,10 @@ public class CameraBehaviour : MonoBehaviour
     [SerializeField] private float offset;
     private float minX;
     private float maxX;
+    private float camWidth;
 
-    public float MinX {  set { value =  minX; } }
+    public float MinX { get; set; }
+    public float MaxX { get; set; }
 
     private PlayerMovement playerDirection;
     public float smoothTime = 20f;
@@ -19,6 +22,17 @@ public class CameraBehaviour : MonoBehaviour
     void Start()
     {
         playerDirection = target.GetComponent<PlayerMovement>();
+
+        Camera cam = GetComponent<Camera>();
+
+        float camHeight = 2f * cam.orthographicSize;
+        camWidth = camHeight * cam.aspect;
+
+        SpriteRenderer backgroundSR = GameObject.FindWithTag("BackgroundSprite").GetComponent<SpriteRenderer>();
+
+        minX = backgroundSR.bounds.min.x;
+        maxX = backgroundSR.bounds.max.x;
+
     }
 
 
@@ -33,14 +47,12 @@ public class CameraBehaviour : MonoBehaviour
         offset = playerDirection.isFacingRight ? Mathf.Abs(offset) : -Mathf.Abs(offset);
 
         // Almacena el valor de donde debe estar la camara cuando se mueve el jugador
-        Vector3 desiredPosition = new Vector3(target.transform.position.x + offset, transform.position.y, transform.position.z);
+        Vector2 desiredPosition = new Vector2(target.transform.position.x + offset, transform.position.y);
 
         // Limita el avance de la camara para no salirse del fondo
-        float clampedX = Mathf.Clamp(desiredPosition.x, minX , maxX);
-        desiredPosition = new Vector3(clampedX, desiredPosition.y, desiredPosition.z);
+        float clampedX = Mathf.Clamp(desiredPosition.x, minX + camWidth /2 , maxX - camWidth /2);
+        desiredPosition = new Vector2(clampedX, desiredPosition.y);
 
-
-        //transform.position = desiredPosition;
         // Esto es el concepto de interpolación. No lo se, la linea la escribio chatpgt xd
         transform.position = Vector2.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime);
     }
