@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Transition
   - SpawnPos
+  - Item
   layers:
   - Default
   - TransparentFX

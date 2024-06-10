@@ -5,13 +5,18 @@ using UnityEngine.UI;
 
 public class Inventario : MonoBehaviour
 {
-    
+
     [SerializeField] private GameObject invent;
     [SerializeField] private GameObject select1;
     [SerializeField] private GameObject select2;
     [SerializeField] private GameObject select3;
     bool OpenInventario;
     short position;
+    private short EspaciosDisponibles;
+
+    public short getEspaciosDisponibles() { return EspaciosDisponibles; }
+    public void setEspaciosDisponibles(short value) { EspaciosDisponibles = value; }
+    
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +26,7 @@ public class Inventario : MonoBehaviour
         select1.SetActive(false);
         select2.SetActive(false);
         select3.SetActive(false);
+        
     }
 
     // Update is called once per frame
