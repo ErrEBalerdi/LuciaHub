@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteractions : MonoBehaviour
 {
     [SerializeField] private bool ePressed = false;
     private bool canTransition = false;
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && canTransition)
@@ -30,7 +30,9 @@ public class PlayerInteractions : MonoBehaviour
                 collision.GetComponent<RoomTransition>().PlayTransition();
             }
         }
+     
     }
+    
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Transition"))
