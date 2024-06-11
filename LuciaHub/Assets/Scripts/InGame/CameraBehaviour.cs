@@ -28,11 +28,29 @@ public class CameraBehaviour : MonoBehaviour
         float camHeight = 2f * cam.orthographicSize;
         camWidth = camHeight * cam.aspect;
 
-        SpriteRenderer backgroundSR = GameObject.FindWithTag("BackgroundSprite").GetComponent<SpriteRenderer>();
+        // Guarda todos los objetos con el tag "BackgroundSprite"
+        GameObject[] backgroundArray = GameObject.FindGameObjectsWithTag("BackgroundSprite");
+        foreach (GameObject background in backgroundArray)
+        {
+            //Por cada elemento busca el sprite y agarra los valores minimos y maximos
+            float backgoundMin = background.GetComponent<SpriteRenderer>().bounds.min.x;
+            float backgroundMax = background.GetComponent<SpriteRenderer>().bounds.max.x;
+            Debug.Log("Current Background: " + background.name + "| Background[0]: " + backgroundArray[0].name);
 
-        minX = backgroundSR.bounds.min.x;
-        maxX = backgroundSR.bounds.max.x;
+            // Si es el primer elemento, estos seran los minimos y maximos para la camara.
+            if(background == backgroundArray[0])
+            {
+                minX = backgoundMin;
+                maxX = backgroundMax;
+            }
 
+            // Simplemente guarda el menor en minX y el mayor en maxX
+            if (backgoundMin < minX) 
+                minX = backgoundMin;
+
+            if(backgroundMax > maxX) 
+                maxX = backgroundMax;
+        }
     }
 
 
