@@ -18,10 +18,12 @@ public class PlayerInteractions : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Trigger: " + collision.tag);
+        //Debug.Log("Trigger: " + collision.tag);
 
         if (collision.CompareTag("Transition"))
         {
+            Debug.Log("Trigger on: " + collision.name);
+
             canTransition = true;
 
             if (canTransition && ePressed)
