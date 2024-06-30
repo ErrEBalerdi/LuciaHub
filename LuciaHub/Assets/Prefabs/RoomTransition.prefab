@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 749611858064319025}
   - component: {fileID: 6876333274152492580}
   m_Layer: 0
-  m_Name: PuertaTP
+  m_Name: RoomTransition
   m_TagString: Transition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: GameScene
+  spawnToLoad: 2
 --- !u!61 &6876333274152492580
 BoxCollider2D:
   m_ObjectHideFlags: 0

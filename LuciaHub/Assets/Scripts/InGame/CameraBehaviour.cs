@@ -35,7 +35,6 @@ public class CameraBehaviour : MonoBehaviour
             //Por cada elemento busca el sprite y agarra los valores minimos y maximos
             float backgoundMin = background.GetComponent<SpriteRenderer>().bounds.min.x;
             float backgroundMax = background.GetComponent<SpriteRenderer>().bounds.max.x;
-            Debug.Log("Current Background: " + background.name + "| Background[0]: " + backgroundArray[0].name);
 
             // Si es el primer elemento, estos seran los minimos y maximos para la camara.
             if(background == backgroundArray[0])
