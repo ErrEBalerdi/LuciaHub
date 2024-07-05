@@ -8,13 +8,18 @@ public class PlayerInteractions : MonoBehaviour
 {
     [SerializeField] private bool ePressed = false;
     private bool canTransition = false;
-    private bool TomarObjet = false;
+
+    private Collider2D currentCollision;
+
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && canTransition)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            ePressed = true;
+            if(canTransition && currentCollision != null)
+            {
+                currentCollision.GetComponent<RoomTransition>().PlayTransition();
+            }
         }
         if(Input.GetKeyDown(KeyCode.E) && TomarObjet)
         {
@@ -24,17 +29,16 @@ public class PlayerInteractions : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Trigger: " + collision.tag);
+        //Debug.Log("Trigger: " + collision.tag);
 
         if (collision.CompareTag("Transition"))
         {
+            Debug.Log("Trigger on: " + collision.name);
+
+            currentCollision = collision;
+
             canTransition = true;
 
-            if (canTransition && ePressed)
-            {
-                Debug.Log("E pressed.");
-                collision.GetComponent<RoomTransition>().PlayTransition();
-            }
         }
         if (collision.gameObject.tag == "Item")
         {
@@ -48,7 +52,6 @@ public class PlayerInteractions : MonoBehaviour
         }
 
     }
-    
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Transition"))
