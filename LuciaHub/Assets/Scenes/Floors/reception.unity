@@ -627,6 +627,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3830305874757779915, guid: 1710f921b7a3206488616a8336ab7cbc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1716215507}
+
+    - targetCorrespondingSourceObject: {fileID: 3830305874757779915, guid: 1710f921b7a3206488616a8336ab7cbc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1716215506}
+    - targetCorrespondingSourceObject: {fileID: 3830305874757779915, guid: 1710f921b7a3206488616a8336ab7cbc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1716215515}
+
+
   m_SourcePrefab: {fileID: 100100000, guid: 1710f921b7a3206488616a8336ab7cbc, type: 3}
 --- !u!1 &787410919
 GameObject:
@@ -751,6 +760,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3368364918957349796, guid: 8a7acf3592324144b9493b5a5159fcc7, type: 3}
   m_PrefabInstance: {fileID: 559180645}
   m_PrefabAsset: {fileID: 0}
+
+  m_GameObject: {fileID: 1148595831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8abf10549052c49a71d1ef5740d58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+
 --- !u!1 &1191123071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3900636756636708302, guid: 8a7acf3592324144b9493b5a5159fcc7, type: 3}
@@ -1130,7 +1147,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591490419}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 053bed188a6acff48aaf27630885140a, type: 3}
   m_Name: 
@@ -1175,6 +1192,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3426377512843351326, guid: 1710f921b7a3206488616a8336ab7cbc, type: 3}
   m_PrefabInstance: {fileID: 747776305}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1716215515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716215505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053bed188a6acff48aaf27630885140a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventario:
+  - {fileID: 925868045}
+  - {fileID: 384724294}
+  - {fileID: 680711712}
+  invent: {fileID: 1191123071}
+  select1: {fileID: 269704343}
+  select2: {fileID: 312349410}
+  select3: {fileID: 1144395381}
 --- !u!1 &1730463525
 GameObject:
   m_ObjectHideFlags: 0
