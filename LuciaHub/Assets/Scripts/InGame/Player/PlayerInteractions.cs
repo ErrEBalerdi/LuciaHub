@@ -10,7 +10,7 @@ public class PlayerInteractions : MonoBehaviour
     private bool canTransition = false;
 
     private Collider2D currentCollision;
-
+    bool TomarObjet = false;
 
     private void Update()
     {
