@@ -30,12 +30,12 @@ public class PlayerMovement : MonoBehaviour
         if (horizontalInput < 0.0f) 
         {
             isFacingRight = false;   
-            transform.localScale = new Vector3 (-0.4770458f, 0.4546192f, 1.0f); 
+            transform.localScale = new Vector3 (-0.7657424f, 0.7045414f, 1.0f); 
         }
         else if (horizontalInput > 0.0f) 
         { 
             isFacingRight = true;
-            transform.localScale = new Vector3(0.4770458f, 0.4546192f, 1.0f); 
+            transform.localScale = new Vector3(0.7657424f, 0.7045414f, 1.0f); 
         }
 
         animator.SetBool("walking", horizontalInput != 0.0f);
