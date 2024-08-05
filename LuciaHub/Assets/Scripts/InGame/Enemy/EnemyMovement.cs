@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private EnemyState actualState;
     [SerializeField] private float chaseDistance;
-    [SerializeField, ReadOnly] private float distanceToPlayer;
+    [SerializeField, ReadOnly] private float distanceToPlayer = 0;
     [SerializeField] private float speed;
     [SerializeField] private float waitTime;
     [SerializeField] private Transform[] waypoints;

@@ -12,11 +12,14 @@ public class Inventario : MonoBehaviour
     [SerializeField] private GameObject select2;
     [SerializeField] private GameObject select3;
     short position;
-
+    bool TomarObjet;
+    private List<bool> Espacios = new List<bool> ();
+    private List<int> CodigosDeItem = new List<int> ();
   
     // Start is called before the first frame update
     void Start()
     {
+        TomarObjet = false;
         OpenInventario = false;
         invent.SetActive(false);
         select1.SetActive(false);
@@ -27,7 +30,7 @@ public class Inventario : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        
         if (Input.GetKeyDown(KeyCode.Q))
         {
             OpenInventario = !OpenInventario;
@@ -69,7 +72,9 @@ public class Inventario : MonoBehaviour
        
     }
    
-   
     
+
+
+
 }
 

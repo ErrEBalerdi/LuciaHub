@@ -48,7 +48,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actualState: 0
+  chaseDistance: 10
+  distanceToPlayer: 0
   speed: 100
+  waitTime: 2
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!50 &6748091729319542170
 Rigidbody2D:
   serializedVersion: 4
