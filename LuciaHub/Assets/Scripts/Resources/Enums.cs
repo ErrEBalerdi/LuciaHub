@@ -10,8 +10,10 @@ namespace Enums
         Right,
         Elevator,
     }
-    public enum Scenes
+    public enum EnemyState
     {
-
+        Patrol,
+        Chase,
+        Search,
     }
 }
